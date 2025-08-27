@@ -1,15 +1,17 @@
+
 export default [
   {
     id: 1,
-    title: "Scan plant photos",
+    title: "Scan Your Plants",
     description:
-      "get instant health feedback of your plant, color-coded status, suggestions and strain info",
+      "Get instant insights on your plant’s health, with color-coded status, helpful tips, and strain information at your fingertips.",
     image: require("../assets/images/qr-code-scan.png"),
   },
   {
     id: 2,
-    title: "Track Individual plants",
-    description: "Track plant health in your journal and grow card",
+    title: "Track Each Plant",
+    description:
+      "Monitor the progress of every plant in your personal journal and grow card, keeping your garden organized and thriving.",
     image: require("../assets/images/cannabis.png"),
   },
 ];
