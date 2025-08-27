@@ -13,7 +13,6 @@ import slides from "../utils/slides";
 import OnboardingItem from "./OnboardingItem";
 import Paginator from "./Paginator";
 import { Colors } from "@/constants/colors";
-import { LinearGradient } from "expo-linear-gradient";
 
 const Onboarding = () => {
   const router = useRouter();
