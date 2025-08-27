@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import { SplashScreen } from "expo-router";
+import Onboarding from "@/components/Onboarding";
 
 export default function Index() {
   const [fontsLoaded] = useFonts({
@@ -28,7 +29,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text style={{fontFamily:"Mulish", fontSize:40}}>Lens</Text>
+      <Onboarding />
     </View>
   );
 }
