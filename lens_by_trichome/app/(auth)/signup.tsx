@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -8,19 +8,40 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Alert
 } from "react-native";
 import { Colors } from "@/constants/colors";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign, Entypo } from "@expo/vector-icons";
+import { supabase } from "@/lib/supabase";
 
 export default function Signup() {
   const router = useRouter();
 
-  const handleLogin = () => {
-    router.push("/home");
-  };
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
+    async function signUpWithEmail() {
+    setLoading(true)
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    })
+    if (error) Alert.alert(error.message)
+    if (!session) {
+      Alert.alert('sign up failed')
+    }else{
+       Alert.alert('Signup successful!')
+      router.push("/signin")
+    }
+    setLoading(false)
+  }
+  
   return (
     <SafeAreaView style={styles.container}>
       {/* Scrollable content */}
@@ -44,6 +65,8 @@ export default function Signup() {
             <TextInput
               placeholder="enter your email address"
               style={styles.textInput}
+              value={email}
+              onChangeText={(text) => setEmail(text)}
             />
           </View>
           <View style={styles.form}>
@@ -52,17 +75,20 @@ export default function Signup() {
               placeholder="enter your password"
               style={styles.textInput}
               secureTextEntry
+              autoCapitalize={'none'}
+              value={password}
+              onChangeText={(text) => setPassword(text)}
             />
           </View>
-          <View style={styles.form}>
+          {/* <View style={styles.form}>
             <Text style={styles.formTitle}>Confirm Password</Text>
             <TextInput
               placeholder="enter your password"
               style={styles.textInput}
               secureTextEntry
             />
-          </View>
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          </View> */}
+          <TouchableOpacity style={styles.button} onPress={() => signUpWithEmail()} disabled={loading} >
             <Text style={styles.buttonText}>sign up</Text>
           </TouchableOpacity>
         </View>
