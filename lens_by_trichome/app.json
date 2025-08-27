@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/cannabis.png",
-    "scheme": "lensbytrichome",
+    "scheme": "com.lensbytrichome",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

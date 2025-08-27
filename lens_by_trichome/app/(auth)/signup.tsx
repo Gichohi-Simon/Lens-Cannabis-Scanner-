@@ -13,7 +13,7 @@ import {
 import { Colors } from "@/constants/colors";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign, Entypo } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import { supabase } from "@/lib/supabase";
 
 export default function Signup() {
@@ -101,20 +101,15 @@ export default function Signup() {
         </View>
 
         <View style={styles.subHeadingContainer}>
-          <Text style={styles.subHeading}>or sign up with</Text>
+          <Text style={styles.subHeading}>or sign in with magic link</Text>
         </View>
 
         <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.icon}>
-            <AntDesign name="google" size={20} color={Colors.light} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.icon}>
-            <AntDesign name="apple1" size={20} color={Colors.light} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.icon}>
-            <Entypo name="link" size={20} color={Colors.light} />
-          </TouchableOpacity>
-        </View>
+                 <TouchableOpacity style={styles.icon} onPress={() => router.push('/magic')}>
+                   <Text style={{fontFamily:"Mulish", color:Colors.light}}>Magic Link</Text>
+                   <Entypo name="link" size={20} color={Colors.light} />
+                 </TouchableOpacity>
+               </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -177,23 +172,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
   },
-  iconContainer: {
+ iconContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     gap: 20,
     marginTop: 20,
-    paddingRight: 40,
+    paddingHorizontal:24
   },
   icon: {
     backgroundColor: Colors.primary,
-    minWidth: 40,
-    maxWidth:30,
+    width:'100%',
     paddingVertical: 10,
     borderRadius: 10,
-    flex: 1,
+    flexDirection: 'row',
     justifyContent: "center",
     alignItems: "center",
+    gap:10
   },
   signupContainer: {
     flexDirection: "row",
