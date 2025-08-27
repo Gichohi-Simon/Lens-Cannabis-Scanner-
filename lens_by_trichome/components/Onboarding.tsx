@@ -33,8 +33,7 @@ const Onboarding = () => {
   };
 
   return (
-     <LinearGradient
-      colors={[Colors.primary, Colors.secondary]}
+     <View
      style={styles.container}>
       <View style={{ flex: 3 }}>
         <FlatList
@@ -62,7 +61,7 @@ const Onboarding = () => {
           </TouchableOpacity>
         )}
       </View>
-    </LinearGradient>
+    </View>
   );
 };
 
@@ -71,18 +70,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor:Colors.primary
+    backgroundColor:Colors.secondary
   },
   button: {
-    backgroundColor: Colors.secondary,
+    backgroundColor: Colors.primary,
     width: 300,
     borderRadius: 10,
   },
   buttonText: {
-    color: Colors.primary,
-    fontFamily: "Montserrat-SemiBold",
+    color: Colors.secondary,
+    fontFamily: "Mulish-Bold",
     textAlign: "center",
-    paddingVertical: 7,
+    paddingVertical: 14,
   },
 });
 

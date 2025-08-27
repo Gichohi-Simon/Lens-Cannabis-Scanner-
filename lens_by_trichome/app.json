@@ -4,7 +4,7 @@
     "slug": "lens_by_trichome",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/leaf.svg",
+    "icon": "./assets/images/cannabis.png",
     "scheme": "lensbytrichome",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Colors } from "@/constants/colors";
-import { FontAwesome, FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5, Ionicons, Entypo } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const TabLayout = () => {
@@ -10,9 +10,9 @@ const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors.primary,
+        tabBarActiveTintColor: Colors.secondary,
         tabBarStyle: {
-          backgroundColor: Colors.secondary,
+          backgroundColor: Colors.primary,
           paddingTop: 10,
           marginTop: -insets.top,
         },
@@ -23,7 +23,7 @@ const TabLayout = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={30} name="home" color={color} />
+            <Entypo size={30} name="home" color={color} />
           ),
           tabBarLabel: () => null,
         }}
@@ -33,7 +33,7 @@ const TabLayout = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <Ionicons name="scan" size={30} color={color} />
+            <Ionicons name="scan-circle" size={30} color={color} />
           ),
           tabBarLabel: () => null,
         }}
@@ -43,7 +43,7 @@ const TabLayout = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="crown" size={30} color={color} />
+            <FontAwesome5 name="crown" size={24} color={color} />
           ),
           tabBarLabel: () => null,
         }}
@@ -53,7 +53,7 @@ const TabLayout = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-outline" size={30} color={color} />
+            <Ionicons name="settings" size={26} color={color} />
           ),
           tabBarLabel: () => null,
         }}
