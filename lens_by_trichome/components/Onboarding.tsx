@@ -43,6 +43,7 @@ const Onboarding = () => {
           showsHorizontalScrollIndicator={false}
           pagingEnabled
           bounces={false}
+          initialScrollIndex={0}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
             { useNativeDriver: false }
